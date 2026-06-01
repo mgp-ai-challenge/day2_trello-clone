@@ -4,71 +4,141 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trello Board</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>My Trello Board</h1>
+  <header>
+    <h1>My Trello Board</h1>
+  </header>
 
   <div id="board">
 
-    <div class="column">
-      <h2>To Do</h2>
-      <ul class="card-list">
-        <li class="card">
+    <div class="column" id="col-todo">
+      <div class="column-header">
+        <h2>To Do</h2>
+        <span class="card-count" id="count-todo">3</span>
+      </div>
+      <ul class="card-list" id="list-todo">
+        <li class="card" data-priority="high" data-due="2026-06-05">
           <strong>Design homepage mockup</strong>
           <p>Sketch the layout for the landing page.</p>
-          <span class="priority">Priority: High</span><br>
-          <span class="due">Due: 2026-06-05</span>
+          <div class="card-meta">
+            <span class="priority priority-high">High</span>
+            <span class="due">📅 2026-06-05</span>
+          </div>
         </li>
-        <li class="card">
+        <li class="card" data-priority="high" data-due="2026-06-03">
           <strong>Set up repository</strong>
           <p>Create GitHub repo and push initial commit.</p>
-          <span class="priority">Priority: High</span><br>
-          <span class="due">Due: 2026-06-03</span>
+          <div class="card-meta">
+            <span class="priority priority-high">High</span>
+            <span class="due">📅 2026-06-03</span>
+          </div>
         </li>
-        <li class="card">
+        <li class="card" data-priority="medium" data-due="2026-06-06">
           <strong>Write project README</strong>
           <p>Describe project purpose, setup steps, and tech stack.</p>
-          <span class="priority">Priority: Medium</span><br>
-          <span class="due">Due: 2026-06-06</span>
+          <div class="card-meta">
+            <span class="priority priority-medium">Medium</span>
+            <span class="due">📅 2026-06-06</span>
+          </div>
         </li>
       </ul>
-      <button class="add-card-btn" data-column="todo">+ Add card</button>
+      <div class="add-card-form" id="form-todo">
+        <textarea placeholder="Card title…"></textarea>
+        <div class="form-row">
+          <select>
+            <option value="high">🔴 High</option>
+            <option value="medium" selected>🟡 Medium</option>
+            <option value="low">🟢 Low</option>
+          </select>
+          <input type="date">
+        </div>
+        <div class="form-row">
+          <button class="btn-save">Add card</button>
+          <button class="btn-cancel">Cancel</button>
+        </div>
+      </div>
+      <button class="add-card-btn" data-target="form-todo">+ Add card</button>
     </div>
 
-    <div class="column">
-      <h2>In Progress</h2>
-      <ul class="card-list">
-        <li class="card">
+    <div class="column" id="col-inprogress">
+      <div class="column-header">
+        <h2>In Progress</h2>
+        <span class="card-count" id="count-inprogress">2</span>
+      </div>
+      <ul class="card-list" id="list-inprogress">
+        <li class="card" data-priority="high" data-due="2026-06-02">
           <strong>Build HTML structure</strong>
           <p>Create semantic HTML for the Trello board.</p>
-          <span class="priority">Priority: High</span><br>
-          <span class="due">Due: 2026-06-02</span>
+          <div class="card-meta">
+            <span class="priority priority-high">High</span>
+            <span class="due overdue">📅 2026-06-02</span>
+          </div>
         </li>
-        <li class="card">
+        <li class="card" data-priority="low" data-due="2026-06-04">
           <strong>Research CSS frameworks</strong>
           <p>Compare Tailwind, Bootstrap, and plain CSS.</p>
-          <span class="priority">Priority: Low</span><br>
-          <span class="due">Due: 2026-06-04</span>
+          <div class="card-meta">
+            <span class="priority priority-low">Low</span>
+            <span class="due">📅 2026-06-04</span>
+          </div>
         </li>
       </ul>
-      <button class="add-card-btn" data-column="inprogress">+ Add card</button>
+      <div class="add-card-form" id="form-inprogress">
+        <textarea placeholder="Card title…"></textarea>
+        <div class="form-row">
+          <select>
+            <option value="high">🔴 High</option>
+            <option value="medium" selected>🟡 Medium</option>
+            <option value="low">🟢 Low</option>
+          </select>
+          <input type="date">
+        </div>
+        <div class="form-row">
+          <button class="btn-save">Add card</button>
+          <button class="btn-cancel">Cancel</button>
+        </div>
+      </div>
+      <button class="add-card-btn" data-target="form-inprogress">+ Add card</button>
     </div>
 
-    <div class="column">
-      <h2>Done</h2>
-      <ul class="card-list">
-        <li class="card">
+    <div class="column" id="col-done">
+      <div class="column-header">
+        <h2>Done</h2>
+        <span class="card-count" id="count-done">1</span>
+      </div>
+      <ul class="card-list" id="list-done">
+        <li class="card" data-priority="medium" data-due="2026-06-01">
           <strong>Define project scope</strong>
           <p>Agreed on features for MVP.</p>
-          <span class="priority">Priority: Medium</span><br>
-          <span class="due">Due: 2026-06-01</span>
+          <div class="card-meta">
+            <span class="priority priority-medium">Medium</span>
+            <span class="due overdue">📅 2026-06-01</span>
+          </div>
         </li>
       </ul>
-      <button class="add-card-btn" data-column="done">+ Add card</button>
+      <div class="add-card-form" id="form-done">
+        <textarea placeholder="Card title…"></textarea>
+        <div class="form-row">
+          <select>
+            <option value="high">🔴 High</option>
+            <option value="medium" selected>🟡 Medium</option>
+            <option value="low">🟢 Low</option>
+          </select>
+          <input type="date">
+        </div>
+        <div class="form-row">
+          <button class="btn-save">Add card</button>
+          <button class="btn-cancel">Cancel</button>
+        </div>
+      </div>
+      <button class="add-card-btn" data-target="form-done">+ Add card</button>
     </div>
 
   </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
