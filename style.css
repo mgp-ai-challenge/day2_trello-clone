@@ -231,3 +231,83 @@ header h1 {
 }
 
 .btn-cancel:hover { color: #e6edf3; }
+
+/* ── Modal ── */
+#card-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-box {
+  position: relative;
+  background: #282e33;
+  border-radius: 12px;
+  padding: 24px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 20px 48px rgba(0,0,0,0.5);
+}
+
+.modal-box h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e6edf3;
+}
+
+.modal-section-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8c9bab;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.modal-actions button {
+  flex: 1;
+  background: #3d4b56;
+  color: #e6edf3;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.modal-actions button:hover { background: #4759ff; }
+
+.modal-delete {
+  background: transparent;
+  color: #f87171;
+  border: 1px solid #f8717133;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.modal-delete:hover { background: #3d1a1a; }
+
+/* ── Draggable cards ── */
+.card[draggable="true"] { cursor: grab; }
+.card[draggable="true"]:active { cursor: grabbing; }
