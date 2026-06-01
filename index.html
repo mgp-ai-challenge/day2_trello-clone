@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trello Board</title>
+</head>
+<body>
+
+  <h1>My Trello Board</h1>
+
+  <div id="board">
+
+    <div class="column">
+      <h2>To Do</h2>
+      <ul class="card-list">
+        <li class="card">
+          <strong>Design homepage mockup</strong>
+          <p>Sketch the layout for the landing page.</p>
+          <span class="priority">Priority: High</span><br>
+          <span class="due">Due: 2026-06-05</span>
+        </li>
+        <li class="card">
+          <strong>Set up repository</strong>
+          <p>Create GitHub repo and push initial commit.</p>
+          <span class="priority">Priority: High</span><br>
+          <span class="due">Due: 2026-06-03</span>
+        </li>
+        <li class="card">
+          <strong>Write project README</strong>
+          <p>Describe project purpose, setup steps, and tech stack.</p>
+          <span class="priority">Priority: Medium</span><br>
+          <span class="due">Due: 2026-06-06</span>
+        </li>
+      </ul>
+      <button class="add-card-btn" data-column="todo">+ Add card</button>
+    </div>
+
+    <div class="column">
+      <h2>In Progress</h2>
+      <ul class="card-list">
+        <li class="card">
+          <strong>Build HTML structure</strong>
+          <p>Create semantic HTML for the Trello board.</p>
+          <span class="priority">Priority: High</span><br>
+          <span class="due">Due: 2026-06-02</span>
+        </li>
+        <li class="card">
+          <strong>Research CSS frameworks</strong>
+          <p>Compare Tailwind, Bootstrap, and plain CSS.</p>
+          <span class="priority">Priority: Low</span><br>
+          <span class="due">Due: 2026-06-04</span>
+        </li>
+      </ul>
+      <button class="add-card-btn" data-column="inprogress">+ Add card</button>
+    </div>
+
+    <div class="column">
+      <h2>Done</h2>
+      <ul class="card-list">
+        <li class="card">
+          <strong>Define project scope</strong>
+          <p>Agreed on features for MVP.</p>
+          <span class="priority">Priority: Medium</span><br>
+          <span class="due">Due: 2026-06-01</span>
+        </li>
+      </ul>
+      <button class="add-card-btn" data-column="done">+ Add card</button>
+    </div>
+
+  </div>
+
+</body>
+</html>
